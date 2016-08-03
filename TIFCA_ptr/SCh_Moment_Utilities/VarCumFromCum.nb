@@ -1,0 +1,651 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 4.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     27734,        586]*)
+(*NotebookOutlinePosition[     28380,        608]*)
+(*  CellTagsIndexPosition[     28336,        604]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["For IDL: VarCumFromCum.pro", "Section"],
+
+Cell[BoxData[
+    \(<< mathStatica.m\)], "Input"],
+
+Cell[BoxData[
+    StyleBox[
+      FrameBox[
+        RowBox[{GridBox[{
+              {
+                RowBox[{"      ", 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    RowBox[{
+                      StyleBox["mathStatica",
+                        FontFamily->"Helvetica",
+                        FontSize->10,
+                        FontWeight->"Bold",
+                        FontColor->RGBColor[0.570001, 0.2, 1]], 
+                      StyleBox[":",
+                        FontColor->GrayLevel[0]]}]}]}], 
+                StyleBox[\(v1  .2\),
+                  FontColor->GrayLevel[0]], 
+                RowBox[{
+                  StyleBox["      ",
+                    FontColor->RGBColor[0.100008, 0.2, 0.6]], 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    StyleBox["Registered",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    StyleBox[" ",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    RowBox[{
+                      StyleBox["to",
+                        FontWeight->"Bold",
+                        FontColor->GrayLevel[0]], 
+                      StyleBox[":",
+                        FontColor->GrayLevel[0]]}]}]}], 
+                StyleBox[\(\(Prof\ Joachim\ Mueller\)\(\ \ \ \)\),
+                  FontColor->GrayLevel[0]]},
+              {
+                RowBox[{"      ", 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    StyleBox[\(No . \ of  processes\),
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    StyleBox[":",
+                      FontColor->GrayLevel[0]]}]}], 
+                StyleBox["2",
+                  FontColor->GrayLevel[0],
+                  FontVariations->{"CompatibilityType"->0}], 
+                RowBox[{"      ", 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    StyleBox["User",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    StyleBox[" ",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    RowBox[{
+                      StyleBox["class",
+                        FontWeight->"Bold",
+                        FontColor->GrayLevel[0]], 
+                      StyleBox[":",
+                        FontColor->GrayLevel[0]]}]}]}], 
+                RowBox[{
+                  StyleBox[\(Gold/Professional\),
+                    FontColor->GrayLevel[0]], "     "}]}
+              },
+            ColumnSpacings->{1, 3, 1},
+            ColumnAlignments->{Left}], " "}],
+        BoxFrame->{{0, 0}, {1, 1}},
+        BoxMargins->2],
+      FontColor->RGBColor[0.100008, 0.2, 0.6],
+      Background->RGBColor[0.900008, 0.900008, 1]]], "Text",
+  GeneratedCell->True,
+  CellAutoOverwrite->True,
+  TextAlignment->Center,
+  FontFamily->"Times"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(r = 2;\)\), "\[IndentingNewLine]", 
+    \(\(p = \(KStatistic[r]\)[\([2]\)];\)\), "\[IndentingNewLine]", 
+    \(\(Varofr = CentralMomentToCumulantZ[2, p];\)\), "\[IndentingNewLine]", 
+    \(Limit[Varofr\ n, n \[Rule] \[Infinity]]\)}], "Input"],
+
+Cell[BoxData[
+    \(2\)], "Output"],
+
+Cell[BoxData[
+    \(2\ \[Kappa]\_2\%2 + \[Kappa]\_4\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(r = 4;\)\), "\[IndentingNewLine]", 
+    \(\(p = KStatistic[r];\)\), "\[IndentingNewLine]", 
+    \(\(Varofr = 
+        CentralMomentToCumulantZ[2, p[\([2]\)]];\)\), "\[IndentingNewLine]", 
+    \(Limit[Varofr\ n, n \[Rule] \[Infinity]]\)}], "Input"],
+
+Cell[BoxData[
+    \(24\ \[Kappa]\_2\%4 + 72\ \[Kappa]\_2\%2\ \[Kappa]\_4 + 
+      34\ \[Kappa]\_4\%2 + 48\ \[Kappa]\_3\ \[Kappa]\_5 + 
+      16\ \[Kappa]\_2\ \((9\ \[Kappa]\_3\%2 + \[Kappa]\_6)\) + \
+\[Kappa]\_8\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[{
+    \(\(k[
+          1]\  = \ \(KStatistic[
+            1]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\
+\[IndentingNewLine]", 
+    \(\(k[
+          2]\  = \ \(KStatistic[
+            2]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\n", 
+    \(\(k[
+          3\ ] = \ \(KStatistic[
+            3]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\
+\[IndentingNewLine]", 
+    \(\(k[
+          4\ ] = \ \(KStatistic[
+            4]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\
+\[IndentingNewLine]", 
+    \(\(k[
+          5\ ] = \ \(KStatistic[
+            5]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\
+\[IndentingNewLine]", 
+    \(\(k[
+          6\ ] = \ \(KStatistic[
+            6]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\
+\[IndentingNewLine]", 
+    \(\(k[
+          7]\  = \ \(KStatistic[
+            7]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\n", 
+    \(\(k[
+          8]\  = \ \(KStatistic[
+            8]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\
+\[IndentingNewLine]", 
+    \(\(k[
+          9]\  = \ \(KStatistic[
+            9]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\
+\[IndentingNewLine]", 
+    \(\(k[
+          10]\  = \ \(KStatistic[
+            10]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\)}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(Vark[1] = 
+      Limit[CentralMomentToCumulantZ[2, k[1]] n, 
+        n \[Rule] \[Infinity]]\), "\[IndentingNewLine]", 
+    \(Vark[2] = 
+      Limit[CentralMomentToCumulantZ[2, k[2]] n, 
+        n \[Rule] \[Infinity]]\), "\[IndentingNewLine]", 
+    \(Vark[3] = 
+      Limit[CentralMomentToCumulantZ[2, k[3]] n, 
+        n \[Rule] \[Infinity]]\), "\[IndentingNewLine]", 
+    \(Vark[4] = 
+      Limit[CentralMomentToCumulantZ[2, k[4]] n, 
+        n \[Rule] \[Infinity]]\), "\[IndentingNewLine]", 
+    \(Vark[5] = 
+      Limit[CentralMomentToCumulantZ[2, k[5]] n, 
+        n \[Rule] \[Infinity]]\), "\[IndentingNewLine]", 
+    \(Vark[6] = 
+      Limit[CentralMomentToCumulantZ[2, k[6]] n, 
+        n \[Rule] \[Infinity]]\), "\[IndentingNewLine]", 
+    \(Vark[7] = 
+      Limit[CentralMomentToCumulantZ[2, k[7]] n, 
+        n \[Rule] \[Infinity]]\), "\[IndentingNewLine]", 
+    \(Vark[8] = 
+      Limit[CentralMomentToCumulantZ[2, k[8]] n, 
+        n \[Rule] \[Infinity]]\), "\[IndentingNewLine]", 
+    \(Vark[9] = 
+      Limit[CentralMomentToCumulantZ[2, k[9]] n, 
+        n \[Rule] \[Infinity]]\), "\[IndentingNewLine]", 
+    \(Vark[10] = 
+      Limit[CentralMomentToCumulantZ[2, k[10]] n, 
+        n \[Rule] \[Infinity]]\)}], "Input"],
+
+Cell[BoxData[
+    \(\[Kappa]\_2\)], "Output"],
+
+Cell[BoxData[
+    \(2\ \[Kappa]\_2\%2 + \[Kappa]\_4\)], "Output"],
+
+Cell[BoxData[
+    \(6\ \[Kappa]\_2\%3 + 9\ \[Kappa]\_3\%2 + 
+      9\ \[Kappa]\_2\ \[Kappa]\_4 + \[Kappa]\_6\)], "Output"],
+
+Cell[BoxData[
+    \(24\ \[Kappa]\_2\%4 + 72\ \[Kappa]\_2\%2\ \[Kappa]\_4 + 
+      34\ \[Kappa]\_4\%2 + 48\ \[Kappa]\_3\ \[Kappa]\_5 + 
+      16\ \[Kappa]\_2\ \((9\ \[Kappa]\_3\%2 + \[Kappa]\_6)\) + \
+\[Kappa]\_8\)], "Output"],
+
+Cell[BoxData[
+    \(120\ \[Kappa]\_2\%5 + 1800\ \[Kappa]\_2\%2\ \[Kappa]\_3\%2 + 
+      600\ \[Kappa]\_2\%3\ \[Kappa]\_4 + 1500\ \[Kappa]\_3\%2\ \[Kappa]\_4 + 
+      850\ \[Kappa]\_2\ \[Kappa]\_4\%2 + 
+      1200\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_5 + 125\ \[Kappa]\_5\%2 + 
+      200\ \[Kappa]\_2\%2\ \[Kappa]\_6 + 200\ \[Kappa]\_4\ \[Kappa]\_6 + 
+      100\ \[Kappa]\_3\ \[Kappa]\_7 + 
+      25\ \[Kappa]\_2\ \[Kappa]\_8 + \[Kappa]\_10\)], "Output"],
+
+Cell[BoxData[
+    \(720\ \[Kappa]\_2\%6 + 21600\ \[Kappa]\_2\%3\ \[Kappa]\_3\%2 + 
+      8100\ \[Kappa]\_3\%4 + 5400\ \[Kappa]\_2\%4\ \[Kappa]\_4 + 
+      54000\ \[Kappa]\_2\ \[Kappa]\_3\%2\ \[Kappa]\_4 + 
+      15300\ \[Kappa]\_2\%2\ \[Kappa]\_4\%2 + 4950\ \[Kappa]\_4\%3 + 
+      21600\ \[Kappa]\_2\%2\ \[Kappa]\_3\ \[Kappa]\_5 + 
+      21600\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_5 + 
+      4500\ \[Kappa]\_2\ \[Kappa]\_5\%2 + 2400\ \[Kappa]\_2\%3\ \[Kappa]\_6 + 
+      6300\ \[Kappa]\_3\%2\ \[Kappa]\_6 + 
+      7200\ \[Kappa]\_2\ \[Kappa]\_4\ \[Kappa]\_6 + 461\ \[Kappa]\_6\%2 + 
+      3600\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_7 + 
+      780\ \[Kappa]\_5\ \[Kappa]\_7 + 450\ \[Kappa]\_2\%2\ \[Kappa]\_8 + 
+      465\ \[Kappa]\_4\ \[Kappa]\_8 + 180\ \[Kappa]\_3\ \[Kappa]\_9 + 
+      36\ \[Kappa]\_2\ \[Kappa]\_10 + \[Kappa]\_12\)], "Output"],
+
+Cell[BoxData[
+    \(5040\ \[Kappa]\_2\%7 + 264600\ \[Kappa]\_2\%4\ \[Kappa]\_3\%2 + 
+      396900\ \[Kappa]\_2\ \[Kappa]\_3\%4 + 
+      52920\ \[Kappa]\_2\%5\ \[Kappa]\_4 + 
+      1323000\ \[Kappa]\_2\%2\ \[Kappa]\_3\%2\ \[Kappa]\_4 + 
+      249900\ \[Kappa]\_2\%3\ \[Kappa]\_4\%2 + 
+      639450\ \[Kappa]\_3\%2\ \[Kappa]\_4\%2 + 
+      242550\ \[Kappa]\_2\ \[Kappa]\_4\%3 + 
+      352800\ \[Kappa]\_2\%3\ \[Kappa]\_3\ \[Kappa]\_5 + 
+      308700\ \[Kappa]\_3\%3\ \[Kappa]\_5 + 
+      1058400\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_5 + 
+      110250\ \[Kappa]\_2\%2\ \[Kappa]\_5\%2 + 
+      113925\ \[Kappa]\_4\ \[Kappa]\_5\%2 + 
+      29400\ \[Kappa]\_2\%4\ \[Kappa]\_6 + 
+      308700\ \[Kappa]\_2\ \[Kappa]\_3\%2\ \[Kappa]\_6 + 
+      176400\ \[Kappa]\_2\%2\ \[Kappa]\_4\ \[Kappa]\_6 + 
+      91630\ \[Kappa]\_4\%2\ \[Kappa]\_6 + 
+      133770\ \[Kappa]\_3\ \[Kappa]\_5\ \[Kappa]\_6 + 
+      22589\ \[Kappa]\_2\ \[Kappa]\_6\%2 + 
+      88200\ \[Kappa]\_2\%2\ \[Kappa]\_3\ \[Kappa]\_7 + 
+      91140\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_7 + 
+      38220\ \[Kappa]\_2\ \[Kappa]\_5\ \[Kappa]\_7 + 1715\ \[Kappa]\_7\%2 + 
+      7350\ \[Kappa]\_2\%3\ \[Kappa]\_8 + 
+      19845\ \[Kappa]\_3\%2\ \[Kappa]\_8 + 
+      22785\ \[Kappa]\_2\ \[Kappa]\_4\ \[Kappa]\_8 + 
+      2989\ \[Kappa]\_6\ \[Kappa]\_8 + 
+      8820\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_9 + 
+      1960\ \[Kappa]\_5\ \[Kappa]\_9 + 882\ \[Kappa]\_2\%2\ \[Kappa]\_10 + 
+      931\ \[Kappa]\_4\ \[Kappa]\_10 + 294\ \[Kappa]\_3\ \[Kappa]\_11 + 
+      49\ \[Kappa]\_2\ \[Kappa]\_12 + \[Kappa]\_14\)], "Output"],
+
+Cell[BoxData[
+    \(40320\ \[Kappa]\_2\%8 + 3386880\ \[Kappa]\_2\%5\ \[Kappa]\_3\%2 + 
+      12700800\ \[Kappa]\_2\%2\ \[Kappa]\_3\%4 + 
+      564480\ \[Kappa]\_2\%6\ \[Kappa]\_4 + 
+      28224000\ \[Kappa]\_2\%3\ \[Kappa]\_3\%2\ \[Kappa]\_4 + 
+      11995200\ \[Kappa]\_3\%4\ \[Kappa]\_4 + 
+      3998400\ \[Kappa]\_2\%4\ \[Kappa]\_4\%2 + 
+      40924800\ \[Kappa]\_2\ \[Kappa]\_3\%2\ \[Kappa]\_4\%2 + 
+      7761600\ \[Kappa]\_2\%2\ \[Kappa]\_4\%3 + 1989400\ \[Kappa]\_4\%4 + 
+      5644800\ \[Kappa]\_2\%4\ \[Kappa]\_3\ \[Kappa]\_5 + 
+      19756800\ \[Kappa]\_2\ \[Kappa]\_3\%3\ \[Kappa]\_5 + 
+      33868800\ \[Kappa]\_2\%2\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_5 + 
+      17404800\ \[Kappa]\_3\ \[Kappa]\_4\%2\ \[Kappa]\_5 + 
+      2352000\ \[Kappa]\_2\%3\ \[Kappa]\_5\%2 + 
+      6350400\ \[Kappa]\_3\%2\ \[Kappa]\_5\%2 + 
+      7291200\ \[Kappa]\_2\ \[Kappa]\_4\ \[Kappa]\_5\%2 + 
+      376320\ \[Kappa]\_2\%5\ \[Kappa]\_6 + 
+      9878400\ \[Kappa]\_2\%2\ \[Kappa]\_3\%2\ \[Kappa]\_6 + 
+      3763200\ \[Kappa]\_2\%3\ \[Kappa]\_4\ \[Kappa]\_6 + 
+      10207680\ \[Kappa]\_3\%2\ \[Kappa]\_4\ \[Kappa]\_6 + 
+      5864320\ \[Kappa]\_2\ \[Kappa]\_4\%2\ \[Kappa]\_6 + 
+      8561280\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_5\ \[Kappa]\_6 + 
+      956480\ \[Kappa]\_5\%2\ \[Kappa]\_6 + 
+      722848\ \[Kappa]\_2\%2\ \[Kappa]\_6\%2 + 
+      769104\ \[Kappa]\_4\ \[Kappa]\_6\%2 + 
+      1881600\ \[Kappa]\_2\%3\ \[Kappa]\_3\ \[Kappa]\_7 + 
+      1693440\ \[Kappa]\_3\%3\ \[Kappa]\_7 + 
+      5832960\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_7 + 
+      1223040\ \[Kappa]\_2\%2\ \[Kappa]\_5\ \[Kappa]\_7 + 
+      1301440\ \[Kappa]\_4\ \[Kappa]\_5\ \[Kappa]\_7 + 
+      765184\ \[Kappa]\_3\ \[Kappa]\_6\ \[Kappa]\_7 + 
+      109760\ \[Kappa]\_2\ \[Kappa]\_7\%2 + 
+      117600\ \[Kappa]\_2\%4\ \[Kappa]\_8 + 
+      1270080\ \[Kappa]\_2\ \[Kappa]\_3\%2\ \[Kappa]\_8 + 
+      729120\ \[Kappa]\_2\%2\ \[Kappa]\_4\ \[Kappa]\_8 + 
+      386120\ \[Kappa]\_4\%2\ \[Kappa]\_8 + 
+      564480\ \[Kappa]\_3\ \[Kappa]\_5\ \[Kappa]\_8 + 
+      191296\ \[Kappa]\_2\ \[Kappa]\_6\ \[Kappa]\_8 + 6434\ \[Kappa]\_8\%2 + 
+      282240\ \[Kappa]\_2\%2\ \[Kappa]\_3\ \[Kappa]\_9 + 
+      297920\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_9 + 
+      125440\ \[Kappa]\_2\ \[Kappa]\_5\ \[Kappa]\_9 + 
+      11424\ \[Kappa]\_7\ \[Kappa]\_9 + 18816\ \[Kappa]\_2\%3\ \[Kappa]\_10 + 
+      51744\ \[Kappa]\_3\%2\ \[Kappa]\_10 + 
+      59584\ \[Kappa]\_2\ \[Kappa]\_4\ \[Kappa]\_10 + 
+      7952\ \[Kappa]\_6\ \[Kappa]\_10 + 
+      18816\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_11 + 
+      4256\ \[Kappa]\_5\ \[Kappa]\_11 + 1568\ \[Kappa]\_2\%2\ \[Kappa]\_12 + 
+      1680\ \[Kappa]\_4\ \[Kappa]\_12 + 448\ \[Kappa]\_3\ \[Kappa]\_13 + 
+      64\ \[Kappa]\_2\ \[Kappa]\_14 + \[Kappa]\_16\)], "Output"],
+
+Cell[BoxData[
+    \(362880\ \[Kappa]\_2\%9 + 45722880\ \[Kappa]\_2\%6\ \[Kappa]\_3\%2 + 
+      342921600\ \[Kappa]\_2\%3\ \[Kappa]\_3\%4 + 57153600\ \[Kappa]\_3\%6 + 
+      6531840\ \[Kappa]\_2\%7\ \[Kappa]\_4 + 
+      571536000\ \[Kappa]\_2\%4\ \[Kappa]\_3\%2\ \[Kappa]\_4 + 
+      971611200\ \[Kappa]\_2\ \[Kappa]\_3\%4\ \[Kappa]\_4 + 
+      64774080\ \[Kappa]\_2\%5\ \[Kappa]\_4\%2 + 
+      1657454400\ \[Kappa]\_2\%2\ \[Kappa]\_3\%2\ \[Kappa]\_4\%2 + 
+      209563200\ \[Kappa]\_2\%3\ \[Kappa]\_4\%3 + 
+      562010400\ \[Kappa]\_3\%2\ \[Kappa]\_4\%3 + 
+      161141400\ \[Kappa]\_2\ \[Kappa]\_4\%4 + 
+      91445760\ \[Kappa]\_2\%5\ \[Kappa]\_3\ \[Kappa]\_5 + 
+      800150400\ \[Kappa]\_2\%2\ \[Kappa]\_3\%3\ \[Kappa]\_5 + 
+      914457600\ \[Kappa]\_2\%3\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_5 + 
+      819201600\ \[Kappa]\_3\%3\ \[Kappa]\_4\ \[Kappa]\_5 + 
+      1409788800\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_4\%2\ \[Kappa]\_5 + 
+      47628000\ \[Kappa]\_2\%4\ \[Kappa]\_5\%2 + 
+      514382400\ \[Kappa]\_2\ \[Kappa]\_3\%2\ \[Kappa]\_5\%2 + 
+      295293600\ \[Kappa]\_2\%2\ \[Kappa]\_4\ \[Kappa]\_5\%2 + 
+      156378600\ \[Kappa]\_4\%2\ \[Kappa]\_5\%2 + 
+      76204800\ \[Kappa]\_3\ \[Kappa]\_5\%3 + 
+      5080320\ \[Kappa]\_2\%6\ \[Kappa]\_6 + 
+      266716800\ \[Kappa]\_2\%3\ \[Kappa]\_3\%2\ \[Kappa]\_6 + 
+      120022560\ \[Kappa]\_3\%4\ \[Kappa]\_6 + 
+      76204800\ \[Kappa]\_2\%4\ \[Kappa]\_4\ \[Kappa]\_6 + 
+      826822080\ \[Kappa]\_2\ \[Kappa]\_3\%2\ \[Kappa]\_4\ \[Kappa]\_6 + 
+      237504960\ \[Kappa]\_2\%2\ \[Kappa]\_4\%2\ \[Kappa]\_6 + 
+      83825280\ \[Kappa]\_4\%3\ \[Kappa]\_6 + 
+      346731840\ \[Kappa]\_2\%2\ \[Kappa]\_3\ \[Kappa]\_5\ \[Kappa]\_6 + 
+      367688160\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_5\ \[Kappa]\_6 + 
+      77474880\ \[Kappa]\_2\ \[Kappa]\_5\%2\ \[Kappa]\_6 + 
+      19516896\ \[Kappa]\_2\%3\ \[Kappa]\_6\%2 + 
+      54041904\ \[Kappa]\_3\%2\ \[Kappa]\_6\%2 + 
+      62297424\ \[Kappa]\_2\ \[Kappa]\_4\ \[Kappa]\_6\%2 + 
+      2788296\ \[Kappa]\_6\%3 + 
+      38102400\ \[Kappa]\_2\%4\ \[Kappa]\_3\ \[Kappa]\_7 + 
+      137168640\ \[Kappa]\_2\ \[Kappa]\_3\%3\ \[Kappa]\_7 + 
+      236234880\ \[Kappa]\_2\%2\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_7 + 
+      125102880\ \[Kappa]\_3\ \[Kappa]\_4\%2\ \[Kappa]\_7 + 
+      33022080\ \[Kappa]\_2\%3\ \[Kappa]\_5\ \[Kappa]\_7 + 
+      91445760\ \[Kappa]\_3\%2\ \[Kappa]\_5\ \[Kappa]\_7 + 
+      105416640\ \[Kappa]\_2\ \[Kappa]\_4\ \[Kappa]\_5\ \[Kappa]\_7 + 
+      61979904\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_6\ \[Kappa]\_7 + 
+      14140224\ \[Kappa]\_5\ \[Kappa]\_6\ \[Kappa]\_7 + 
+      4445280\ \[Kappa]\_2\%2\ \[Kappa]\_7\%2 + 
+      4805136\ \[Kappa]\_4\ \[Kappa]\_7\%2 + 
+      1905120\ \[Kappa]\_2\%5\ \[Kappa]\_8 + 
+      51438240\ \[Kappa]\_2\%2\ \[Kappa]\_3\%2\ \[Kappa]\_8 + 
+      19686240\ \[Kappa]\_2\%3\ \[Kappa]\_4\ \[Kappa]\_8 + 
+      54295920\ \[Kappa]\_3\%2\ \[Kappa]\_4\ \[Kappa]\_8 + 
+      31275720\ \[Kappa]\_2\ \[Kappa]\_4\%2\ \[Kappa]\_8 + 
+      45722880\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_5\ \[Kappa]\_8 + 
+      5205060\ \[Kappa]\_5\%2\ \[Kappa]\_8 + 
+      7747488\ \[Kappa]\_2\%2\ \[Kappa]\_6\ \[Kappa]\_8 + 
+      8370432\ \[Kappa]\_4\ \[Kappa]\_6\ \[Kappa]\_8 + 
+      4164048\ \[Kappa]\_3\ \[Kappa]\_7\ \[Kappa]\_8 + 
+      521154\ \[Kappa]\_2\ \[Kappa]\_8\%2 + 
+      7620480\ \[Kappa]\_2\%3\ \[Kappa]\_3\ \[Kappa]\_9 + 
+      6985440\ \[Kappa]\_3\%3\ \[Kappa]\_9 + 
+      24131520\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_9 + 
+      5080320\ \[Kappa]\_2\%2\ \[Kappa]\_5\ \[Kappa]\_9 + 
+      5473440\ \[Kappa]\_4\ \[Kappa]\_5\ \[Kappa]\_9 + 
+      3220560\ \[Kappa]\_3\ \[Kappa]\_6\ \[Kappa]\_9 + 
+      925344\ \[Kappa]\_2\ \[Kappa]\_7\ \[Kappa]\_9 + 24309\ \[Kappa]\_9\%2 + 
+      381024\ \[Kappa]\_2\%4\ \[Kappa]\_10 + 
+      4191264\ \[Kappa]\_2\ \[Kappa]\_3\%2\ \[Kappa]\_10 + 
+      2413152\ \[Kappa]\_2\%2\ \[Kappa]\_4\ \[Kappa]\_10 + 
+      1295784\ \[Kappa]\_4\%2\ \[Kappa]\_10 + 
+      1896048\ \[Kappa]\_3\ \[Kappa]\_5\ \[Kappa]\_10 + 
+      644112\ \[Kappa]\_2\ \[Kappa]\_6\ \[Kappa]\_10 + 
+      43740\ \[Kappa]\_8\ \[Kappa]\_10 + 
+      762048\ \[Kappa]\_2\%2\ \[Kappa]\_3\ \[Kappa]\_11 + 
+      816480\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_11 + 
+      344736\ \[Kappa]\_2\ \[Kappa]\_5\ \[Kappa]\_11 + 
+      31752\ \[Kappa]\_7\ \[Kappa]\_11 + 
+      42336\ \[Kappa]\_2\%3\ \[Kappa]\_12 + 
+      117936\ \[Kappa]\_3\%2\ \[Kappa]\_12 + 
+      136080\ \[Kappa]\_2\ \[Kappa]\_4\ \[Kappa]\_12 + 
+      18396\ \[Kappa]\_6\ \[Kappa]\_12 + 
+      36288\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_13 + 
+      8316\ \[Kappa]\_5\ \[Kappa]\_13 + 2592\ \[Kappa]\_2\%2\ \[Kappa]\_14 + 
+      2808\ \[Kappa]\_4\ \[Kappa]\_14 + 648\ \[Kappa]\_3\ \[Kappa]\_15 + 
+      81\ \[Kappa]\_2\ \[Kappa]\_16 + \[Kappa]\_18\)], "Output"],
+
+Cell[BoxData[
+    \(3628800\ \[Kappa]\_2\%10 + 653184000\ \[Kappa]\_2\%7\ \[Kappa]\_3\%2 + 
+      8573040000\ \[Kappa]\_2\%4\ \[Kappa]\_3\%4 + 
+      5715360000\ \[Kappa]\_2\ \[Kappa]\_3\%6 + 
+      81648000\ \[Kappa]\_2\%8\ \[Kappa]\_4 + 
+      11430720000\ \[Kappa]\_2\%5\ \[Kappa]\_3\%2\ \[Kappa]\_4 + 
+      48580560000\ \[Kappa]\_2\%2\ \[Kappa]\_3\%4\ \[Kappa]\_4 + 
+      1079568000\ \[Kappa]\_2\%6\ \[Kappa]\_4\%2 + 
+      55248480000\ \[Kappa]\_2\%3\ \[Kappa]\_3\%2\ \[Kappa]\_4\%2 + 
+      24528420000\ \[Kappa]\_3\%4\ \[Kappa]\_4\%2 + 
+      5239080000\ \[Kappa]\_2\%4\ \[Kappa]\_4\%3 + 
+      56201040000\ \[Kappa]\_2\ \[Kappa]\_3\%2\ \[Kappa]\_4\%3 + 
+      8057070000\ \[Kappa]\_2\%2\ \[Kappa]\_4\%4 + 
+      1694763000\ \[Kappa]\_4\%5 + 
+      1524096000\ \[Kappa]\_2\%6\ \[Kappa]\_3\ \[Kappa]\_5 + 
+      26671680000\ \[Kappa]\_2\%3\ \[Kappa]\_3\%3\ \[Kappa]\_5 + 
+      7144200000\ \[Kappa]\_3\%5\ \[Kappa]\_5 + 
+      22861440000\ \[Kappa]\_2\%4\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_5 + 
+      81920160000\ \[Kappa]\_2\ \[Kappa]\_3\%3\ \[Kappa]\_4\ \[Kappa]\_5 + 
+      70489440000\ \[Kappa]\_2\%2\ \[Kappa]\_3\ \[Kappa]\_4\%2\ \[Kappa]\_5 + 
+      24766560000\ \[Kappa]\_3\ \[Kappa]\_4\%3\ \[Kappa]\_5 + 
+      952560000\ \[Kappa]\_2\%5\ \[Kappa]\_5\%2 + 
+      25719120000\ \[Kappa]\_2\%2\ \[Kappa]\_3\%2\ \[Kappa]\_5\%2 + 
+      9843120000\ \[Kappa]\_2\%3\ \[Kappa]\_4\ \[Kappa]\_5\%2 + 
+      27147960000\ \[Kappa]\_3\%2\ \[Kappa]\_4\ \[Kappa]\_5\%2 + 
+      15637860000\ \[Kappa]\_2\ \[Kappa]\_4\%2\ \[Kappa]\_5\%2 + 
+      7620480000\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_5\%3 + 
+      433282500\ \[Kappa]\_5\%4 + 72576000\ \[Kappa]\_2\%7\ \[Kappa]\_6 + 
+      6667920000\ \[Kappa]\_2\%4\ \[Kappa]\_3\%2\ \[Kappa]\_6 + 
+      12002256000\ \[Kappa]\_2\ \[Kappa]\_3\%4\ \[Kappa]\_6 + 
+      1524096000\ \[Kappa]\_2\%5\ \[Kappa]\_4\ \[Kappa]\_6 + 
+      41341104000\ \[Kappa]\_2\%2\ \[Kappa]\_3\%2\ \[Kappa]\_4\ \[Kappa]\_6 + 
+      7916832000\ \[Kappa]\_2\%3\ \[Kappa]\_4\%2\ \[Kappa]\_6 + 
+      21829500000\ \[Kappa]\_3\%2\ \[Kappa]\_4\%2\ \[Kappa]\_6 + 
+      8382528000\ \[Kappa]\_2\ \[Kappa]\_4\%3\ \[Kappa]\_6 + 
+      11557728000\ \[Kappa]\_2\%3\ \[Kappa]\_3\ \[Kappa]\_5\ \[Kappa]\_6 + 
+      10636920000\ \[Kappa]\_3\%3\ \[Kappa]\_5\ \[Kappa]\_6 + 
+      36768816000\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_5\ \
+\[Kappa]\_6 + 3873744000\ \[Kappa]\_2\%2\ \[Kappa]\_5\%2\ \[Kappa]\_6 + 
+      4180680000\ \[Kappa]\_4\ \[Kappa]\_5\%2\ \[Kappa]\_6 + 
+      487922400\ \[Kappa]\_2\%4\ \[Kappa]\_6\%2 + 
+      5404190400\ \[Kappa]\_2\ \[Kappa]\_3\%2\ \[Kappa]\_6\%2 + 
+      3114871200\ \[Kappa]\_2\%2\ \[Kappa]\_4\ \[Kappa]\_6\%2 + 
+      1680827400\ \[Kappa]\_4\%2\ \[Kappa]\_6\%2 + 
+      2460250800\ \[Kappa]\_3\ \[Kappa]\_5\ \[Kappa]\_6\%2 + 
+      278829600\ \[Kappa]\_2\ \[Kappa]\_6\%3 + 
+      762048000\ \[Kappa]\_2\%5\ \[Kappa]\_3\ \[Kappa]\_7 + 
+      6858432000\ \[Kappa]\_2\%2\ \[Kappa]\_3\%3\ \[Kappa]\_7 + 
+      7874496000\ \[Kappa]\_2\%3\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_7 + 
+      7239456000\ \[Kappa]\_3\%3\ \[Kappa]\_4\ \[Kappa]\_7 + 
+      12510288000\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_4\%2\ \[Kappa]\_7 + 
+      825552000\ \[Kappa]\_2\%4\ \[Kappa]\_5\ \[Kappa]\_7 + 
+      9144576000\ \[Kappa]\_2\ \[Kappa]\_3\%2\ \[Kappa]\_5\ \[Kappa]\_7 + 
+      5270832000\ \[Kappa]\_2\%2\ \[Kappa]\_4\ \[Kappa]\_5\ \[Kappa]\_7 + 
+      2841804000\ \[Kappa]\_4\%2\ \[Kappa]\_5\ \[Kappa]\_7 + 
+      2079756000\ \[Kappa]\_3\ \[Kappa]\_5\%2\ \[Kappa]\_7 + 
+      3098995200\ \[Kappa]\_2\%2\ \[Kappa]\_3\ \[Kappa]\_6\ \[Kappa]\_7 + 
+      3344544000\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_6\ \[Kappa]\_7 + 
+      1414022400\ \[Kappa]\_2\ \[Kappa]\_5\ \[Kappa]\_6\ \[Kappa]\_7 + 
+      148176000\ \[Kappa]\_2\%3\ \[Kappa]\_7\%2 + 
+      415951200\ \[Kappa]\_3\%2\ \[Kappa]\_7\%2 + 
+      480513600\ \[Kappa]\_2\ \[Kappa]\_4\ \[Kappa]\_7\%2 + 
+      65444400\ \[Kappa]\_6\ \[Kappa]\_7\%2 + 
+      31752000\ \[Kappa]\_2\%6\ \[Kappa]\_8 + 
+      1714608000\ \[Kappa]\_2\%3\ \[Kappa]\_3\%2\ \[Kappa]\_8 + 
+      785862000\ \[Kappa]\_3\%4\ \[Kappa]\_8 + 
+      492156000\ \[Kappa]\_2\%4\ \[Kappa]\_4\ \[Kappa]\_8 + 
+      5429592000\ \[Kappa]\_2\ \[Kappa]\_3\%2\ \[Kappa]\_4\ \[Kappa]\_8 + 
+      1563786000\ \[Kappa]\_2\%2\ \[Kappa]\_4\%2\ \[Kappa]\_8 + 
+      561015000\ \[Kappa]\_4\%3\ \[Kappa]\_8 + 
+      2286144000\ \[Kappa]\_2\%2\ \[Kappa]\_3\ \[Kappa]\_5\ \[Kappa]\_8 + 
+      2463048000\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_5\ \[Kappa]\_8 + 
+      520506000\ \[Kappa]\_2\ \[Kappa]\_5\%2\ \[Kappa]\_8 + 
+      258249600\ \[Kappa]\_2\%3\ \[Kappa]\_6\ \[Kappa]\_8 + 
+      724626000\ \[Kappa]\_3\%2\ \[Kappa]\_6\ \[Kappa]\_8 + 
+      837043200\ \[Kappa]\_2\ \[Kappa]\_4\ \[Kappa]\_6\ \[Kappa]\_8 + 
+      56958300\ \[Kappa]\_6\%2\ \[Kappa]\_8 + 
+      416404800\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_7\ \[Kappa]\_8 + 
+      96238800\ \[Kappa]\_5\ \[Kappa]\_7\ \[Kappa]\_8 + 
+      26057700\ \[Kappa]\_2\%2\ \[Kappa]\_8\%2 + 
+      28451250\ \[Kappa]\_4\ \[Kappa]\_8\%2 + 
+      190512000\ \[Kappa]\_2\%4\ \[Kappa]\_3\ \[Kappa]\_9 + 
+      698544000\ \[Kappa]\_2\ \[Kappa]\_3\%3\ \[Kappa]\_9 + 
+      1206576000\ \[Kappa]\_2\%2\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_9 + 
+      647892000\ \[Kappa]\_3\ \[Kappa]\_4\%2\ \[Kappa]\_9 + 
+      169344000\ \[Kappa]\_2\%3\ \[Kappa]\_5\ \[Kappa]\_9 + 
+      474012000\ \[Kappa]\_3\%2\ \[Kappa]\_5\ \[Kappa]\_9 + 
+      547344000\ \[Kappa]\_2\ \[Kappa]\_4\ \[Kappa]\_5\ \[Kappa]\_9 + 
+      322056000\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_6\ \[Kappa]\_9 + 
+      74340000\ \[Kappa]\_5\ \[Kappa]\_6\ \[Kappa]\_9 + 
+      46267200\ \[Kappa]\_2\%2\ \[Kappa]\_7\ \[Kappa]\_9 + 
+      50500800\ \[Kappa]\_4\ \[Kappa]\_7\ \[Kappa]\_9 + 
+      21870000\ \[Kappa]\_3\ \[Kappa]\_8\ \[Kappa]\_9 + 
+      2430900\ \[Kappa]\_2\ \[Kappa]\_9\%2 + 
+      7620480\ \[Kappa]\_2\%5\ \[Kappa]\_10 + 
+      209563200\ \[Kappa]\_2\%2\ \[Kappa]\_3\%2\ \[Kappa]\_10 + 
+      80438400\ \[Kappa]\_2\%3\ \[Kappa]\_4\ \[Kappa]\_10 + 
+      224532000\ \[Kappa]\_3\%2\ \[Kappa]\_4\ \[Kappa]\_10 + 
+      129578400\ \[Kappa]\_2\ \[Kappa]\_4\%2\ \[Kappa]\_10 + 
+      189604800\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_5\ \[Kappa]\_10 + 
+      21829500\ \[Kappa]\_5\%2\ \[Kappa]\_10 + 
+      32205600\ \[Kappa]\_2\%2\ \[Kappa]\_6\ \[Kappa]\_10 + 
+      35103600\ \[Kappa]\_4\ \[Kappa]\_6\ \[Kappa]\_10 + 
+      17463600\ \[Kappa]\_3\ \[Kappa]\_7\ \[Kappa]\_10 + 
+      4374000\ \[Kappa]\_2\ \[Kappa]\_8\ \[Kappa]\_10 + 
+      92377\ \[Kappa]\_10\%2 + 
+      25401600\ \[Kappa]\_2\%3\ \[Kappa]\_3\ \[Kappa]\_11 + 
+      23587200\ \[Kappa]\_3\%3\ \[Kappa]\_11 + 
+      81648000\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_11 + 
+      17236800\ \[Kappa]\_2\%2\ \[Kappa]\_5\ \[Kappa]\_11 + 
+      18748800\ \[Kappa]\_4\ \[Kappa]\_5\ \[Kappa]\_11 + 
+      11037600\ \[Kappa]\_3\ \[Kappa]\_6\ \[Kappa]\_11 + 
+      3175200\ \[Kappa]\_2\ \[Kappa]\_7\ \[Kappa]\_11 + 
+      167940\ \[Kappa]\_9\ \[Kappa]\_11 + 
+      1058400\ \[Kappa]\_2\%4\ \[Kappa]\_12 + 
+      11793600\ \[Kappa]\_2\ \[Kappa]\_3\%2\ \[Kappa]\_12 + 
+      6804000\ \[Kappa]\_2\%2\ \[Kappa]\_4\ \[Kappa]\_12 + 
+      3691800\ \[Kappa]\_4\%2\ \[Kappa]\_12 + 
+      5405400\ \[Kappa]\_3\ \[Kappa]\_5\ \[Kappa]\_12 + 
+      1839600\ \[Kappa]\_2\ \[Kappa]\_6\ \[Kappa]\_12 + 
+      125880\ \[Kappa]\_8\ \[Kappa]\_12 + 
+      1814400\ \[Kappa]\_2\%2\ \[Kappa]\_3\ \[Kappa]\_13 + 
+      1965600\ \[Kappa]\_3\ \[Kappa]\_4\ \[Kappa]\_13 + 
+      831600\ \[Kappa]\_2\ \[Kappa]\_5\ \[Kappa]\_13 + 
+      77280\ \[Kappa]\_7\ \[Kappa]\_13 + 
+      86400\ \[Kappa]\_2\%3\ \[Kappa]\_14 + 
+      243000\ \[Kappa]\_3\%2\ \[Kappa]\_14 + 
+      280800\ \[Kappa]\_2\ \[Kappa]\_4\ \[Kappa]\_14 + 
+      38340\ \[Kappa]\_6\ \[Kappa]\_14 + 
+      64800\ \[Kappa]\_2\ \[Kappa]\_3\ \[Kappa]\_15 + 
+      15000\ \[Kappa]\_5\ \[Kappa]\_15 + 4050\ \[Kappa]\_2\%2\ \[Kappa]\_16 + 
+      4425\ \[Kappa]\_4\ \[Kappa]\_16 + 900\ \[Kappa]\_3\ \[Kappa]\_17 + 
+      100\ \[Kappa]\_2\ \[Kappa]\_18 + \[Kappa]\_20\)], "Output"]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"4.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1217}, {0, 979}},
+WindowSize->{582, 740},
+WindowMargins->{{202, Automatic}, {Automatic, 74}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 45, 0, 59, "Section"],
+Cell[1824, 55, 49, 1, 30, "Input"],
+Cell[1876, 58, 3384, 81, 73, "Text"],
+
+Cell[CellGroupData[{
+Cell[5285, 143, 265, 4, 90, "Input"],
+Cell[5553, 149, 35, 1, 29, "Output"],
+Cell[5591, 152, 65, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5693, 158, 270, 5, 90, "Input"],
+Cell[5966, 165, 225, 4, 29, "Output"]
+}, Open  ]],
+Cell[6206, 172, 1313, 37, 210, "Input"],
+
+Cell[CellGroupData[{
+Cell[7544, 213, 1253, 30, 210, "Input"],
+Cell[8800, 245, 45, 1, 29, "Output"],
+Cell[8848, 248, 65, 1, 29, "Output"],
+Cell[8916, 251, 122, 2, 29, "Output"],
+Cell[9041, 255, 225, 4, 29, "Output"],
+Cell[9269, 261, 453, 7, 48, "Output"],
+Cell[9725, 270, 846, 13, 86, "Output"],
+Cell[10574, 285, 1580, 29, 143, "Output"],
+Cell[12157, 316, 2768, 48, 257, "Output"],
+Cell[14928, 366, 4773, 82, 447, "Output"],
+Cell[19704, 450, 8002, 132, 770, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

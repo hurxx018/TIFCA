@@ -1,0 +1,338 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 4.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      9563,        270]*)
+(*NotebookOutlinePosition[     10209,        292]*)
+(*  CellTagsIndexPosition[     10165,        288]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["For IDL: MapCentral2Cumulant.pro", "Section"],
+
+Cell[BoxData[
+    \(<< mathStatica.m\)], "Input"],
+
+Cell[BoxData[
+    StyleBox[
+      FrameBox[
+        RowBox[{GridBox[{
+              {
+                RowBox[{"      ", 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    RowBox[{
+                      StyleBox["mathStatica",
+                        FontFamily->"Helvetica",
+                        FontSize->10,
+                        FontWeight->"Bold",
+                        FontColor->RGBColor[0.570001, 0.2, 1]], 
+                      StyleBox[":",
+                        FontColor->GrayLevel[0]]}]}]}], 
+                StyleBox[\(v1  .2\),
+                  FontColor->GrayLevel[0]], 
+                RowBox[{
+                  StyleBox["      ",
+                    FontColor->RGBColor[0.100008, 0.2, 0.6]], 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    StyleBox["Registered",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    StyleBox[" ",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    RowBox[{
+                      StyleBox["to",
+                        FontWeight->"Bold",
+                        FontColor->GrayLevel[0]], 
+                      StyleBox[":",
+                        FontColor->GrayLevel[0]]}]}]}], 
+                StyleBox[\(\(Prof\ Joachim\ Mueller\)\(\ \ \ \)\),
+                  FontColor->GrayLevel[0]]},
+              {
+                RowBox[{"      ", 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    StyleBox[\(No . \ of  processes\),
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    StyleBox[":",
+                      FontColor->GrayLevel[0]]}]}], 
+                StyleBox["2",
+                  FontColor->GrayLevel[0],
+                  FontVariations->{"CompatibilityType"->0}], 
+                RowBox[{"      ", 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    StyleBox["User",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    StyleBox[" ",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    RowBox[{
+                      StyleBox["class",
+                        FontWeight->"Bold",
+                        FontColor->GrayLevel[0]], 
+                      StyleBox[":",
+                        FontColor->GrayLevel[0]]}]}]}], 
+                RowBox[{
+                  StyleBox[\(Gold/Professional\),
+                    FontColor->GrayLevel[0]], "     "}]}
+              },
+            ColumnSpacings->{1, 3, 1},
+            ColumnAlignments->{Left}], " "}],
+        BoxFrame->{{0, 0}, {1, 1}},
+        BoxMargins->2],
+      FontColor->RGBColor[0.100008, 0.2, 0.6],
+      Background->RGBColor[0.900008, 0.900008, 1]]], "Text",
+  GeneratedCell->True,
+  CellAutoOverwrite->True,
+  TextAlignment->Center,
+  FontFamily->"Times"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(CumulantToCentral[3]\), "\[IndentingNewLine]", 
+    \(CumulantToRaw[1]\)}], "Input"],
+
+Cell[BoxData[
+    \(\[Kappa]\_3 \[Rule] \[Mu]\_3\)], "Output"],
+
+Cell[BoxData[
+    \(\[Kappa]\_1 \[Rule] \[Mu]\&\[Prime]\_1\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[{
+    \(\(cum[
+          1] = \(CumulantToRaw[1]\)[\([2]\)] /. \[Mu]\&\[Prime]\_1 \[Rule] 
+            raw[1]\ ;\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          2] = \(CumulantToCentral[2]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          3] = \(CumulantToCentral[3]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          4] = \(CumulantToCentral[4]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          5] = \(CumulantToCentral[5]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          6] = \(CumulantToCentral[6]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          7] = \(CumulantToCentral[7]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          8] = \(CumulantToCentral[8]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          9] = \(CumulantToCentral[9]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          10] = \(CumulantToCentral[10]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          11] = \(CumulantToCentral[11]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          12] = \(CumulantToCentral[12]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          13] = \(CumulantToCentral[13]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          14] = \(CumulantToCentral[14]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          15] = \(CumulantToCentral[15]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          16] = \(CumulantToCentral[16]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          17] = \(CumulantToCentral[17]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          18] = \(CumulantToCentral[18]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          19] = \(CumulantToCentral[19]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\), "\[IndentingNewLine]", 
+    \(\(cum[
+          20] = \(CumulantToCentral[20]\)[\([2]\)] /. \[Mu]\_r_ \[Rule] 
+            c[r];\)\)}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(cum[10]\)], "Input"],
+
+Cell[BoxData[
+    \(22680\ c[2]\^5 - 37800\ c[2]\^2\ c[3]\^2 - 18900\ c[2]\^3\ c[4] + 
+      4200\ c[3]\^2\ c[4] + 3150\ c[2]\ c[4]\^2 + 5040\ c[2]\ c[3]\ c[5] - 
+      126\ c[5]\^2 + 1260\ c[2]\^2\ c[6] - 210\ c[4]\ c[6] - 
+      120\ c[3]\ c[7] - 45\ c[2]\ c[8] + c[10]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(data = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 
+        19, 20}\)], "Input"],
+
+Cell[BoxData[
+    \({1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 
+      20}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(cum[10] /. {c[r_] \[Rule] data[\([r]\)], 
+        raw[1] \[Rule] data[\([1]\)]}\)], "Input"],
+
+Cell[BoxData[
+    \(Part::"pspec" \(\(:\)\(\ \)\) 
+      "Part specification \!\(r\) is neither an integer nor a list of \
+integers."\)], "Message"],
+
+Cell[BoxData[
+    \(\(-817820\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(cum[20] /. {c[r_] \[Rule] data[\([r]\)], 
+        cum[1] \[Rule] data[\([1]\)]}\)], "Input"],
+
+Cell[BoxData[
+    \(Part::"pspec" \(\(:\)\(\ \)\) 
+      "Part specification \!\(r\) is neither an integer nor a list of \
+integers."\)], "Message"],
+
+Cell[BoxData[
+    \(\(-71164964769156240\)\)], "Output"]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"4.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1217}, {0, 979}},
+WindowSize->{582, 740},
+WindowMargins->{{Automatic, 203}, {Automatic, 27}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 51, 0, 59, "Section"],
+Cell[1830, 55, 49, 1, 30, "Input"],
+Cell[1882, 58, 3384, 81, 73, "Text"],
+
+Cell[CellGroupData[{
+Cell[5291, 143, 105, 2, 50, "Input"],
+Cell[5399, 147, 62, 1, 29, "Output"],
+Cell[5464, 150, 72, 1, 29, "Output"]
+}, Open  ]],
+Cell[5551, 154, 2652, 60, 429, "Input"],
+
+Cell[CellGroupData[{
+Cell[8228, 218, 40, 1, 30, "Input"],
+Cell[8271, 221, 285, 4, 67, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8593, 230, 120, 2, 30, "Input"],
+Cell[8716, 234, 112, 2, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8865, 241, 112, 2, 30, "Input"],
+Cell[8980, 245, 148, 3, 42, "Message"],
+Cell[9131, 250, 45, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[9213, 256, 112, 2, 30, "Input"],
+Cell[9328, 260, 148, 3, 42, "Message"],
+Cell[9479, 265, 56, 1, 29, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

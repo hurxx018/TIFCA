@@ -1,0 +1,568 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 4.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     14792,        452]*)
+(*NotebookOutlinePosition[     15500,        476]*)
+(*  CellTagsIndexPosition[     15456,        472]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["For IDL: VarFCumFromCum.pro", "Section"],
+
+Cell[BoxData[
+    \(<< mathStatica.m\)], "Input"],
+
+Cell[BoxData[
+    StyleBox[
+      FrameBox[
+        RowBox[{GridBox[{
+              {
+                RowBox[{"      ", 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    RowBox[{
+                      StyleBox["mathStatica",
+                        FontFamily->"Helvetica",
+                        FontSize->10,
+                        FontWeight->"Bold",
+                        FontColor->RGBColor[0.570001, 0.2, 1]], 
+                      StyleBox[":",
+                        FontColor->GrayLevel[0]]}]}]}], 
+                StyleBox[\(v1  .0\),
+                  FontColor->GrayLevel[0]], 
+                RowBox[{
+                  StyleBox["      ",
+                    FontColor->RGBColor[0.100008, 0.2, 0.6]], 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    StyleBox["Registered",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    StyleBox[" ",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    RowBox[{
+                      StyleBox["to",
+                        FontWeight->"Bold",
+                        FontColor->GrayLevel[0]], 
+                      StyleBox[":",
+                        FontColor->GrayLevel[0]]}]}]}], 
+                StyleBox[\(\(Prof\ Joachim\ Mueller\)\(\ \ \ \)\),
+                  FontColor->GrayLevel[0]]},
+              {
+                RowBox[{"      ", 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    StyleBox[\(No . \ of  licenses\),
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    StyleBox[":",
+                      FontColor->GrayLevel[0]]}]}], 
+                StyleBox["1",
+                  FontColor->GrayLevel[0],
+                  FontVariations->{"CompatibilityType"->0}], 
+                RowBox[{"      ", 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    StyleBox["User",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    StyleBox[" ",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    RowBox[{
+                      StyleBox["class",
+                        FontWeight->"Bold",
+                        FontColor->GrayLevel[0]], 
+                      StyleBox[":",
+                        FontColor->GrayLevel[0]]}]}]}], 
+                RowBox[{
+                  StyleBox[\(Basic/Student\),
+                    FontColor->GrayLevel[0]], "     "}]}
+              },
+            ColumnSpacings->{1, 3, 1},
+            ColumnAlignments->{Left}], " "}],
+        BoxFrame->{{0, 0}, {1, 1}},
+        BoxMargins->2],
+      FontColor->RGBColor[0.100008, 0.2, 0.6],
+      Background->RGBColor[0.900008, 0.900008, 1]]], "Text",
+  GeneratedCell->True,
+  CellAutoOverwrite->True,
+  TextAlignment->Center,
+  FontFamily->"Times"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CentralMomentToCentral[2, 3]\)], "Input"],
+
+Cell[BoxData[
+    \(0\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(k2\  = \ \(KStatistic[
+            2]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\n", 
+    \(\(k3\  = \ \(KStatistic[
+            3]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\
+\[IndentingNewLine]", 
+    \(temp = 
+      CumulantMomentToCentral[{1, 1}, {k2, k3}]\), "\[IndentingNewLine]", 
+    \(res = Limit[temp\ n, n \[Rule] Infinity]\), "\[IndentingNewLine]", 
+    \(temp2 = 
+      CumulantMomentToCumulant[{1, 1}, {k2, k3}]\), "\[IndentingNewLine]", 
+    \(res2 = Limit[temp2\ n, n \[Rule] Infinity]\)}], "Input"],
+
+Cell[BoxData[
+    \(\(-\(\(2\ \((\(-5\) + 2\ n)\)\ \[Mu]\_2\ \[Mu]\_3\)\/\(\((\(-1\) + 
+                  n)\)\ n\)\)\) + \[Mu]\_5\/n\)], "Output"],
+
+Cell[BoxData[
+    \(\(-4\)\ \[Mu]\_2\ \[Mu]\_3 + \[Mu]\_5\)], "Output"],
+
+Cell[BoxData[
+    \(\(6\ \[Kappa]\_2\ \[Kappa]\_3\)\/\(\(-1\) + n\) + \[Kappa]\_5\/n\)], \
+"Output"],
+
+Cell[BoxData[
+    \(6\ \[Kappa]\_2\ \[Kappa]\_3 + \[Kappa]\_5\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Express k-statistics in terms of powersums", "Section"],
+
+Cell[BoxData[{
+    \(\(k[
+          1]\  = \ \(KStatistic[
+            1]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\
+\[IndentingNewLine]", 
+    \(\(k[
+          2]\  = \ \(KStatistic[
+            2]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\n", 
+    \(\(k[
+          3\ ] = \ \(KStatistic[
+            3]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\
+\[IndentingNewLine]", 
+    \(\(k[
+          4\ ] = \ \(KStatistic[
+            4]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\
+\[IndentingNewLine]", 
+    \(\(k[
+          5\ ] = \ \(KStatistic[
+            5]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\
+\[IndentingNewLine]", 
+    \(\(k[
+          6\ ] = \ \(KStatistic[
+            6]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\
+\[IndentingNewLine]", 
+    \(\(k[
+          7]\  = \ \(KStatistic[
+            7]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\n", 
+    \(\(k[
+          8]\  = \ \(KStatistic[
+            8]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\
+\[IndentingNewLine]", 
+    \(\(k[
+          9]\  = \ \(KStatistic[
+            9]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\), "\
+\[IndentingNewLine]", 
+    \(\(k[
+          10]\  = \ \(KStatistic[
+            10]\)\[LeftDoubleBracket]2\[RightDoubleBracket];\)\)}], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Write 2nd Factorial Cumulant in terms of Cumulants: fcum[2]=k[2]-k[1] \
+\>", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(k[2] - k[1]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-\(s\_1\/n\)\) + \(\(-s\_1\%2\) + n\ s\_2\)\/\(\((\(-1\) + n)\)\ \
+n\)\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Check the Expectation value E[ k[2]-k[1] ] ", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(RawMomentToCumulantZ[1, k[2] - k[1]]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-\[Kappa]\_1\) + \[Kappa]\_2\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Determine Variance: Var[ k[2]-k[1] ] ", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(res = 
+      CentralMomentToCumulantZ[2, k[2] - k[1]]\), "\[IndentingNewLine]", 
+    \(Limit[res\ n, n \[Rule] Infinity]\)}], "Input"],
+
+Cell[BoxData[
+    \(\[Kappa]\_2\/n + \(2\ \[Kappa]\_2\%2\)\/\(\(-1\) + n\) - \(2\ \
+\[Kappa]\_3\)\/n + \[Kappa]\_4\/n\)], "Output"],
+
+Cell[BoxData[
+    \(\[Kappa]\_2 + 2\ \[Kappa]\_2\%2 - 
+      2\ \[Kappa]\_3 + \[Kappa]\_4\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Determine Variance for 3rd factorial cumulant: Var[  fcum[3]  ] \
+\>", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(temp = k3 - 3  k2 + 2  k1\), "\[IndentingNewLine]", 
+    \(RawMomentToCumulantZ[1, temp]\), "\[IndentingNewLine]", 
+    \(res = CentralMomentToCumulantZ[2, temp]\), "\[IndentingNewLine]", 
+    \(Limit[res\ n, n \[Rule] Infinity]\)}], "Input"],
+
+Cell[BoxData[
+    \(\(2\ s\_1\)\/n - \(3\ \((\(-s\_1\%2\) + n\ s\_2)\)\)\/\(\((\(-1\) + \
+n)\)\ n\) + \(2\ s\_1\%3 - 3\ n\ s\_1\ s\_2 + n\^2\ s\_3\)\/\(\((\(-2\) + \
+n)\)\ \((\(-1\) + n)\)\ n\)\)], "Output"],
+
+Cell[BoxData[
+    \(2\ \[Kappa]\_1 - 3\ \[Kappa]\_2 + \[Kappa]\_3\)], "Output"],
+
+Cell[BoxData[
+    \(\(4\ \[Kappa]\_2\)\/n + \(18\ \[Kappa]\_2\%2\)\/\(\(-1\) + n\) + \(6\ n\
+\ \[Kappa]\_2\%3\)\/\(\((\(-2\) + n)\)\ \((\(-1\) + n)\)\) - \(12\ \
+\[Kappa]\_3\)\/n - \(36\ \[Kappa]\_2\ \[Kappa]\_3\)\/\(\(-1\) + n\) + \(9\ \
+\[Kappa]\_3\%2\)\/\(\(-1\) + n\) + \(13\ \[Kappa]\_4\)\/n + \(9\ \[Kappa]\_2\ \
+\[Kappa]\_4\)\/\(\(-1\) + n\) - \(6\ \[Kappa]\_5\)\/n + \[Kappa]\_6\/n\)], \
+"Output"],
+
+Cell[BoxData[
+    \(18\ \[Kappa]\_2\%2 + 6\ \[Kappa]\_2\%3 - 12\ \[Kappa]\_3 + 
+      9\ \[Kappa]\_3\%2 + 
+      13\ \[Kappa]\_4 + \[Kappa]\_2\ \((4 - 36\ \[Kappa]\_3 + 
+            9\ \[Kappa]\_4)\) - 6\ \[Kappa]\_5 + \[Kappa]\_6\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Now general approach: Var[  fcum[r]  ] ", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+  "Example: for 3rd factorial cumulant (r=3)\nExpress \[Kappa][s] in terms of \
+",
+  Cell[BoxData[
+      \(TraditionalForm\`\[Kappa]\_s\)]],
+  " and express in terms of k-statistics ( k[s] ), which we determined above\n\
+Check the expectation value (RawMomentToCumulantZ ...)\nNext, determine the \
+Variance (res=CentralMomentToCumulantZ ...) and take the Limit n\[Rule]\
+\[Infinity].\nThis gives us the IDL Format (Format[FullSimplify[res2 ...)\n\
+Just for fun: Express the variance (which is written in terms of cumulants) \
+in terms of factorial cumulants\n\t(",
+  Cell[BoxData[
+      \(res3 = res2\  /. \[Kappa]\_s_ \[Rule] RawToFactorial\)]],
+  "... )"
+}], "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(r = 3\), "\[IndentingNewLine]", 
+    \(\(temp = 
+        ReplaceAll[
+          FactorialToRaw[r, fk] /. \ \[Mu]\&\[Prime]\_s_ \[Rule] 
+              k\_s, {k\_s_ \[Rule] k[s], 
+            fk\_s_ \[Rule] fk[s]}];\)\), "\[IndentingNewLine]", 
+    \(RawMomentToCumulantZ[1, temp[\([2]\)]]\), "\[IndentingNewLine]", 
+    \(\(res = 
+        CentralMomentToCumulantZ[2, 
+          temp[\([2]\)]];\)\), "\[IndentingNewLine]", 
+    \(\(res2 = 
+        Limit[res\ n, n \[Rule] Infinity];\)\), "\[IndentingNewLine]", 
+    \(Format[res2 /. \[Kappa]\_s_ \[Rule] cumulant[s], 
+      InputForm]\), "\[IndentingNewLine]", 
+    \(Format[FullSimplify[res2] /. \[Kappa]\_s_ \[Rule] cumulant[s], 
+      InputForm]\), "\[IndentingNewLine]", 
+    \(\(res3 = 
+        res2\  /. \[Kappa]\_s_ \[Rule] \(RawToFactorial[
+                s]\)[\([2]\)];\)\), "\[IndentingNewLine]", 
+    \(res3\  /. \[Mu]\&\[Prime][s_] \[Rule] fc[s] // 
+      Simplify\), "\[IndentingNewLine]", 
+    \(Clear[r]\)}], "Input"],
+
+Cell[BoxData[
+    \(2\ \[Kappa]\_1 - 3\ \[Kappa]\_2 + \[Kappa]\_3\)], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[
+      StyleBox[\(18*cumulant[2]^2\  + \ 6*cumulant[2]^3\  - \ 
+          12*cumulant[3]\  + \ 9*cumulant[3]^2\  + \ 13*cumulant[4]\  + \ 
+          cumulant[2]*\((4\  - \ 36*cumulant[3]\  + \ 9*cumulant[4])\)\  - \ 
+          6*cumulant[5]\  + \ cumulant[6]\),
+        ShowStringCharacters->True,
+        NumberMarks->True],
+      Format[ 
+        Plus[ 
+          Times[ 18, 
+            Power[ 
+              cumulant[ 2], 2]], 
+          Times[ 6, 
+            Power[ 
+              cumulant[ 2], 3]], 
+          Times[ -12, 
+            cumulant[ 3]], 
+          Times[ 9, 
+            Power[ 
+              cumulant[ 3], 2]], 
+          Times[ 13, 
+            cumulant[ 4]], 
+          Times[ 
+            cumulant[ 2], 
+            Plus[ 4, 
+              Times[ -36, 
+                cumulant[ 3]], 
+              Times[ 9, 
+                cumulant[ 4]]]], 
+          Times[ -6, 
+            cumulant[ 5]], 
+          cumulant[ 6]], InputForm],
+      Editable->True,
+      AutoDelete->True]], "Output"],
+
+Cell[BoxData[
+    InterpretationBox[
+      StyleBox[\(18*cumulant[2]^2\  + \ 6*cumulant[2]^3\  + \ 
+          3*cumulant[3]*\((\(-4\)\  + \ 3*cumulant[3])\)\  + \ 
+          13*cumulant[4]\  + \ 
+          cumulant[2]*\((4\  - \ 36*cumulant[3]\  + \ 9*cumulant[4])\)\  - \ 
+          6*cumulant[5]\  + \ cumulant[6]\),
+        ShowStringCharacters->True,
+        NumberMarks->True],
+      Format[ 
+        Plus[ 
+          Times[ 18, 
+            Power[ 
+              cumulant[ 2], 2]], 
+          Times[ 6, 
+            Power[ 
+              cumulant[ 2], 3]], 
+          Times[ 3, 
+            cumulant[ 3], 
+            Plus[ -4, 
+              Times[ 3, 
+                cumulant[ 3]]]], 
+          Times[ 13, 
+            cumulant[ 4]], 
+          Times[ 
+            cumulant[ 2], 
+            Plus[ 4, 
+              Times[ -36, 
+                cumulant[ 3]], 
+              Times[ 9, 
+                cumulant[ 4]]]], 
+          Times[ -6, 
+            cumulant[ 5]], 
+          cumulant[ 6]], InputForm],
+      Editable->True,
+      AutoDelete->True]], "Output"],
+
+Cell[BoxData[
+    \(Part::"partw" \(\(:\)\(\ \)\) 
+      "Part \!\(2\) of \!\(RawToFactorial[s]\) does not exist."\)], "Message"],
+
+Cell[BoxData[
+    \(6\ fc[1]\^3 + 18\ fc[1]\^2\ fc[2] + 54\ fc[2]\^2 + 6\ fc[2]\^3 + 
+      6\ fc[3] + 9\ fc[3]\^2 + 18\ fc[4] + 
+      9\ fc[1]\ \((2\ fc[2] + 2\ fc[2]\^2 + 4\ fc[3] + fc[4])\) + 
+      9\ fc[2]\ \((8\ fc[3] + fc[4])\) + 9\ fc[5] + fc[6]\)], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"4.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1217}, {0, 979}},
+WindowSize->{780, 855},
+WindowMargins->{{Automatic, 172}, {Automatic, 29}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 46, 0, 59, "Section"],
+Cell[1825, 55, 49, 1, 30, "Input"],
+Cell[1877, 58, 3379, 81, 73, "Text"],
+
+Cell[CellGroupData[{
+Cell[5281, 143, 61, 1, 30, "Input"],
+Cell[5345, 146, 35, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5417, 152, 556, 11, 130, "Input"],
+Cell[5976, 165, 147, 2, 44, "Output"],
+Cell[6126, 169, 71, 1, 29, "Output"],
+Cell[6200, 172, 100, 2, 42, "Output"],
+Cell[6303, 176, 75, 1, 29, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6427, 183, 61, 0, 59, "Section"],
+Cell[6491, 185, 1313, 37, 210, "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7841, 227, 97, 2, 59, "Section"],
+
+Cell[CellGroupData[{
+Cell[7963, 233, 44, 1, 30, "Input"],
+Cell[8010, 236, 106, 2, 47, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8165, 244, 62, 0, 59, "Section"],
+
+Cell[CellGroupData[{
+Cell[8252, 248, 69, 1, 30, "Input"],
+Cell[8324, 251, 64, 1, 29, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8437, 258, 56, 0, 59, "Section"],
+
+Cell[CellGroupData[{
+Cell[8518, 262, 155, 3, 50, "Input"],
+Cell[8676, 267, 131, 2, 45, "Output"],
+Cell[8810, 271, 103, 2, 29, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8962, 279, 91, 2, 59, "Section"],
+
+Cell[CellGroupData[{
+Cell[9078, 285, 263, 4, 90, "Input"],
+Cell[9344, 291, 207, 3, 47, "Output"],
+Cell[9554, 296, 79, 1, 29, "Output"],
+Cell[9636, 299, 405, 6, 47, "Output"],
+Cell[10044, 307, 244, 4, 29, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10337, 317, 58, 0, 59, "Section"],
+
+Cell[CellGroupData[{
+Cell[10420, 321, 694, 14, 146, "Subsubsection"],
+
+Cell[CellGroupData[{
+Cell[11139, 339, 1001, 22, 215, "Input"],
+Cell[12143, 363, 79, 1, 29, "Output"],
+Cell[12225, 366, 1048, 34, 48, "Output"],
+Cell[13276, 402, 1073, 35, 48, "Output"],
+Cell[14352, 439, 129, 2, 24, "Message"],
+Cell[14484, 443, 268, 4, 48, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

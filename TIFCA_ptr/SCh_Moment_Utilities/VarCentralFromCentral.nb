@@ -1,0 +1,226 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 4.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      6142,        175]*)
+(*NotebookOutlinePosition[      6788,        197]*)
+(*  CellTagsIndexPosition[      6744,        193]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["For IDL: VarCentralFromCentral.pro", "Section"],
+
+Cell[BoxData[
+    \(<< mathStatica.m\)], "Input"],
+
+Cell[BoxData[
+    StyleBox[
+      FrameBox[
+        RowBox[{GridBox[{
+              {
+                RowBox[{"      ", 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    RowBox[{
+                      StyleBox["mathStatica",
+                        FontFamily->"Helvetica",
+                        FontSize->10,
+                        FontWeight->"Bold",
+                        FontColor->RGBColor[0.570001, 0.2, 1]], 
+                      StyleBox[":",
+                        FontColor->GrayLevel[0]]}]}]}], 
+                StyleBox[\(v1  .2\),
+                  FontColor->GrayLevel[0]], 
+                RowBox[{
+                  StyleBox["      ",
+                    FontColor->RGBColor[0.100008, 0.2, 0.6]], 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    StyleBox["Registered",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    StyleBox[" ",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    RowBox[{
+                      StyleBox["to",
+                        FontWeight->"Bold",
+                        FontColor->GrayLevel[0]], 
+                      StyleBox[":",
+                        FontColor->GrayLevel[0]]}]}]}], 
+                StyleBox[\(\(Prof\ Joachim\ Mueller\)\(\ \ \ \)\),
+                  FontColor->GrayLevel[0]]},
+              {
+                RowBox[{"      ", 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    StyleBox[\(No . \ of  processes\),
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    StyleBox[":",
+                      FontColor->GrayLevel[0]]}]}], 
+                StyleBox["2",
+                  FontColor->GrayLevel[0],
+                  FontVariations->{"CompatibilityType"->0}], 
+                RowBox[{"      ", 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    StyleBox["User",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    StyleBox[" ",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    RowBox[{
+                      StyleBox["class",
+                        FontWeight->"Bold",
+                        FontColor->GrayLevel[0]], 
+                      StyleBox[":",
+                        FontColor->GrayLevel[0]]}]}]}], 
+                RowBox[{
+                  StyleBox[\(Gold/Professional\),
+                    FontColor->GrayLevel[0]], "     "}]}
+              },
+            ColumnSpacings->{1, 3, 1},
+            ColumnAlignments->{Left}], " "}],
+        BoxFrame->{{0, 0}, {1, 1}},
+        BoxMargins->2],
+      FontColor->RGBColor[0.100008, 0.2, 0.6],
+      Background->RGBColor[0.900008, 0.900008, 1]]], "Text",
+  GeneratedCell->True,
+  CellAutoOverwrite->True,
+  TextAlignment->Center,
+  FontFamily->"Times"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(r = 2\), "\[IndentingNewLine]", 
+    \(\(p = HStatistic[r];\)\), "\[IndentingNewLine]", 
+    \(\(Varofr = 
+        CentralMomentToCentral[2, p[\([2]\)]];\)\), "\[IndentingNewLine]", 
+    \(Limit[Varofr\ n, n \[Rule] \[Infinity]]\)}], "Input"],
+
+Cell[BoxData[
+    \(2\)], "Output"],
+
+Cell[BoxData[
+    \(\(-\[Mu]\_2\%2\) + \[Mu]\_4\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(r = 4\), "\[IndentingNewLine]", 
+    \(\(p = HStatistic[r];\)\), "\[IndentingNewLine]", 
+    \(\(Varofr = 
+        CentralMomentToCentral[2, p[\([2]\)]];\)\), "\[IndentingNewLine]", 
+    \(Limit[Varofr\ n, n \[Rule] \[Infinity]]\)}], "Input"],
+
+Cell[BoxData[
+    \(4\)], "Output"],
+
+Cell[BoxData[
+    \(16\ \[Mu]\_2\ \[Mu]\_3\%2 - \[Mu]\_4\%2 - 
+      8\ \[Mu]\_3\ \[Mu]\_5 + \[Mu]\_8\)], "Output"]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"4.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1217}, {0, 979}},
+WindowSize->{582, 740},
+WindowMargins->{{251, Automatic}, {Automatic, 29}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 53, 0, 59, "Section"],
+Cell[1832, 55, 49, 1, 30, "Input"],
+Cell[1884, 58, 3384, 81, 73, "Text"],
+
+Cell[CellGroupData[{
+Cell[5293, 143, 263, 5, 90, "Input"],
+Cell[5559, 150, 35, 1, 29, "Output"],
+Cell[5597, 153, 61, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5695, 159, 263, 5, 90, "Input"],
+Cell[5961, 166, 35, 1, 29, "Output"],
+Cell[5999, 169, 115, 2, 29, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

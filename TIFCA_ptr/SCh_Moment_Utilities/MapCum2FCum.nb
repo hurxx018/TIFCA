@@ -1,0 +1,356 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 4.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     10278,        288]*)
+(*NotebookOutlinePosition[     10925,        310]*)
+(*  CellTagsIndexPosition[     10881,        306]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["For IDL: MapCum2FCum.pro", "Section"],
+
+Cell["\<\
+Trick: relationship between RawMoments and Factorial Moments same as
+\trelationship between Cumulants and Factorial Cumulants\
+\>", "Text"],
+
+Cell[BoxData[
+    \(<< mathStatica.m\)], "Input"],
+
+Cell[BoxData[
+    StyleBox[
+      FrameBox[
+        RowBox[{GridBox[{
+              {
+                RowBox[{"      ", 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    RowBox[{
+                      StyleBox["mathStatica",
+                        FontFamily->"Helvetica",
+                        FontSize->10,
+                        FontWeight->"Bold",
+                        FontColor->RGBColor[0.570001, 0.2, 1]], 
+                      StyleBox[":",
+                        FontColor->GrayLevel[0]]}]}]}], 
+                StyleBox[\(v1  .2\),
+                  FontColor->GrayLevel[0]], 
+                RowBox[{
+                  StyleBox["      ",
+                    FontColor->RGBColor[0.100008, 0.2, 0.6]], 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    StyleBox["Registered",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    StyleBox[" ",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    RowBox[{
+                      StyleBox["to",
+                        FontWeight->"Bold",
+                        FontColor->GrayLevel[0]], 
+                      StyleBox[":",
+                        FontColor->GrayLevel[0]]}]}]}], 
+                StyleBox[\(\(Prof\ Joachim\ Mueller\)\(\ \ \ \)\),
+                  FontColor->GrayLevel[0]]},
+              {
+                RowBox[{"      ", 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    StyleBox[\(No . \ of  processes\),
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    StyleBox[":",
+                      FontColor->GrayLevel[0]]}]}], 
+                StyleBox["2",
+                  FontColor->GrayLevel[0],
+                  FontVariations->{"CompatibilityType"->0}], 
+                RowBox[{"      ", 
+                  RowBox[{
+                    StyleBox["\[FilledSmallSquare]",
+                      FontColor->RGBColor[0.100008, 0.2, 0.6]], "  ", 
+                    StyleBox["User",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    StyleBox[" ",
+                      FontWeight->"Bold",
+                      FontColor->GrayLevel[0]], 
+                    RowBox[{
+                      StyleBox["class",
+                        FontWeight->"Bold",
+                        FontColor->GrayLevel[0]], 
+                      StyleBox[":",
+                        FontColor->GrayLevel[0]]}]}]}], 
+                RowBox[{
+                  StyleBox[\(Gold/Professional\),
+                    FontColor->GrayLevel[0]], "     "}]}
+              },
+            ColumnSpacings->{1, 3, 1},
+            ColumnAlignments->{Left}], " "}],
+        BoxFrame->{{0, 0}, {1, 1}},
+        BoxMargins->2],
+      FontColor->RGBColor[0.100008, 0.2, 0.6],
+      Background->RGBColor[0.900008, 0.900008, 1]]], "Text",
+  GeneratedCell->True,
+  CellAutoOverwrite->True,
+  TextAlignment->Center,
+  FontFamily->"Times"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(FactorialToRaw[5]\)], "Input"],
+
+Cell[BoxData[
+    \(\[Mu]\&\[Prime][5] \[Rule] 
+      24\ \[Mu]\&\[Prime]\_1 - 50\ \[Mu]\&\[Prime]\_2 + 
+        35\ \[Mu]\&\[Prime]\_3 - 
+        10\ \[Mu]\&\[Prime]\_4 + \[Mu]\&\[Prime]\_5\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[{
+    \(\(fcum[
+          1] = \(FactorialToRaw[1]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          2] = \(FactorialToRaw[2]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          3] = \(FactorialToRaw[3]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          4] = \(FactorialToRaw[4]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          5] = \(FactorialToRaw[5]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          6] = \(FactorialToRaw[6]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          7] = \(FactorialToRaw[7]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          8] = \(FactorialToRaw[8]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          9] = \(FactorialToRaw[9]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          10] = \(FactorialToRaw[
+              10]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          11] = \(FactorialToRaw[
+              11]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          12] = \(FactorialToRaw[
+              12]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          13] = \(FactorialToRaw[
+              13]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          14] = \(FactorialToRaw[
+              14]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          15] = \(FactorialToRaw[
+              15]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          16] = \(FactorialToRaw[
+              16]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          17] = \(FactorialToRaw[
+              17]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          18] = \(FactorialToRaw[
+              18]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          19] = \(FactorialToRaw[
+              19]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\), "\[IndentingNewLine]", 
+    \(\(fcum[
+          20] = \(FactorialToRaw[
+              20]\)[\([2]\)] /. \[Mu]\&\[Prime]\_r_ \[Rule] 
+            cum[r];\)\)}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(fcum[20]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-121645100408832000\)\ cum[1] + 431565146817638400\ cum[2] - 
+      668609730341153280\ cum[3] + 610116075740491776\ cum[4] - 
+      371384787345228000\ cum[5] + 161429736530118960\ cum[6] - 
+      52260903362512720\ cum[7] + 12953636989943896\ cum[8] - 
+      2503858755467550\ cum[9] + 381922055502195\ cum[10] - 
+      46280647751910\ cum[11] + 4465226757381\ cum[12] - 
+      342252511900\ cum[13] + 20692933630\ cum[14] - 973941900\ cum[15] + 
+      34916946\ cum[16] - 920550\ cum[17] + 16815\ cum[18] - 190\ cum[19] + 
+      cum[20]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(data = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 
+        19, 20}\)], "Input"],
+
+Cell[BoxData[
+    \({1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 
+      20}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(fcum[10] /. cum[r_] \[Rule] data[\([r]\)]\)], "Input"],
+
+Cell[BoxData[
+    \(Part::"pspec" \(\(:\)\(\ \)\) 
+      "Part specification \!\(r\) is neither an integer nor a list of \
+integers."\)], "Message"],
+
+Cell[BoxData[
+    \(40320\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(fcum[20] /. cum[r_] \[Rule] data[\([r]\)]\)], "Input"],
+
+Cell[BoxData[
+    \(Part::"pspec" \(\(:\)\(\ \)\) 
+      "Part specification \!\(r\) is neither an integer nor a list of \
+integers."\)], "Message"],
+
+Cell[BoxData[
+    \(6402373705728000\)], "Output"]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"4.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1217}, {0, 979}},
+WindowSize->{496, 740},
+WindowMargins->{{Automatic, 305}, {Automatic, -14}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 43, 0, 59, "Section"],
+Cell[1822, 55, 149, 3, 52, "Text"],
+Cell[1974, 60, 49, 1, 30, "Input"],
+Cell[2026, 63, 3384, 81, 73, "Text"],
+
+Cell[CellGroupData[{
+Cell[5435, 148, 50, 1, 30, "Input"],
+Cell[5488, 151, 204, 4, 29, "Output"]
+}, Open  ]],
+Cell[5707, 158, 3008, 71, 450, "Input"],
+
+Cell[CellGroupData[{
+Cell[8740, 233, 41, 1, 30, "Input"],
+Cell[8784, 236, 575, 9, 181, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[9396, 250, 120, 2, 50, "Input"],
+Cell[9519, 254, 112, 2, 48, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[9668, 261, 74, 1, 30, "Input"],
+Cell[9745, 264, 148, 3, 42, "Message"],
+Cell[9896, 269, 39, 1, 29, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[9972, 275, 74, 1, 30, "Input"],
+Cell[10049, 278, 148, 3, 42, "Message"],
+Cell[10200, 283, 50, 1, 29, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+
